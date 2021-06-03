@@ -4,11 +4,11 @@ A simple BERT-based ranking model. The score of a query-document-pair is compute
 ## Requirements
 This code is tested with Python 3.8.10 and
 * torch==1.8.1
-* transformers==4.6.0
-* pytorch-lightning==1.3.1
-* h5py==2.10.0
-* numpy==1.20.1
-* tqdm==4.60.0
+* transformers==4.6.1
+* pytorch-lightning==1.3.3
+* h5py==3.2.1
+* numpy==1.20.2
+* tqdm==4.61.0
 
 ## Cloning
 Clone this repository using `git clone --recursive` to get the submodule.
