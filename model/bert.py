@@ -29,8 +29,7 @@ class BertRanker(BaseRanker):
             test_ds = ValTestDataset(hparams['data_file'], hparams['test_file'], hparams['bert_type'])
 
         num_workers = hparams.get('num_workers')
-        uses_ddp = 'ddp' in hparams.get('accelerator', '')
-        super().__init__(hparams, train_ds, val_ds, test_ds, hparams['loss_margin'], hparams['batch_size'], num_workers, uses_ddp)
+        super().__init__(hparams, train_ds, val_ds, test_ds, hparams['loss_margin'], hparams['batch_size'], num_workers)
 
         self.bert = BertModel.from_pretrained(hparams['bert_type'], return_dict=True)
         self.dropout = torch.nn.Dropout(hparams['dropout'])

@@ -14,7 +14,7 @@ PointwiseTrainBatch = Tuple[Batch, torch.FloatTensor]
 PairwiseTrainInput = Tuple[Input, Input]
 PairwiseTrainBatch = Tuple[Batch, Batch]
 ValTestInput = Tuple[int, int, Input, int]
-ValTestBatch = Tuple[torch.IntTensor, torch.IntTensor, Batch, torch.IntTensor]
+ValTestBatch = Tuple[torch.LongTensor, torch.LongTensor, Batch, torch.LongTensor]
 
 
 def _get_single_input(query: str, doc: str, char_limit: int = 10000) -> Input:
@@ -163,7 +163,7 @@ class ValTestDataset(ValTestDatasetBase):
             ValTestBatch: A batch of validation inputs
         """
         q_ids, doc_ids, inputs, labels = zip(*val_test_inputs)
-        return torch.IntTensor(q_ids), \
-               torch.IntTensor(doc_ids), \
+        return torch.LongTensor(q_ids), \
+               torch.LongTensor(doc_ids), \
                _collate_bert(inputs, self.tokenizer), \
-               torch.IntTensor(labels)
+               torch.LongTensor(labels)
