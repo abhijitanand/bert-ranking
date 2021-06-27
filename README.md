@@ -43,8 +43,8 @@ python -m ranking_utils.scripts.convert_to_trec -h
 ```
 
 ### Ranking
-You can also use a trained model to re-rank any existing TREC runfile:
+You can also use a trained model to re-rank any existing testsets or TREC runfiles:
 ```
 python re_rank.py -h
 ```
-This will again create a new TREC runfile which can be evaluated. __If you use this script, make sure that the query and document IDs in the data file (created by the pre-processing script) and the runfile match!__ Again, make sure to set `CUDA_VISIBLE_DEVICES` to control which GPUs are used.
+This will again create a new TREC runfile which can be evaluated. __If you use this script, make sure that the query and document IDs in the data file (created by the pre-processing script) and the testsets/runfiles match!__ Again, make sure to set `CUDA_VISIBLE_DEVICES` to control which GPUs are used.
